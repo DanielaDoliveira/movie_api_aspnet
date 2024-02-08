@@ -19,7 +19,16 @@ public class MovieController : ControllerBase
         _context = context;
         _mapper = mapper;
     }
+
+    /// <summary>
+    /// Add a movie to Database
+    /// </summary>
+    /// <param name="movieDTO">Object with necessary fields to create a movie</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Object created with successful</response>
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+
     public IActionResult CreateMovie([FromBody] CreateMovieDTO movieDTO)
     {
         Movie movie = _mapper.Map<Movie>(movieDTO);
@@ -29,24 +38,37 @@ public class MovieController : ControllerBase
 
     }
 
+    /// <summary>
+    /// Read all movies. If the user not pass a param to skip/take the default is show the first ten results
+    /// </summary>
+    /// <param name="movieDTO">Object with necessary fields to create a movie</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="200">Ok</response>
     [HttpGet]
-    public IEnumerable<Movie> ReadMovies([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public IEnumerable<ReadMovieDTO> ReadMovies([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        return _context.Movies.Skip(skip).Take(take);
+        return _mapper.Map<List<ReadMovieDTO>>(_context.Movies.Skip(skip).Take(take));
     }
 
-
+    /// <summary>
+    /// Read movies by id passed by user as param
+    /// </summary>
+    /// <param name="id">Object id</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="200">Ok</response>
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult? ReadMovieById(int id)
     {
         var movie = _context.Movies.FirstOrDefault(movie => movie.Id == id);
         if (movie == null)
-        {
             return NotFound();
-        }
         else
         {
-            return Ok(movie);
+            var movieDTO = _mapper.Map<ReadMovieDTO>(movie);
+
+            return Ok(movieDTO);
         }
 
     }
@@ -90,5 +112,19 @@ public class MovieController : ControllerBase
             return NoContent();
         }
 
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteMovie(int id)
+    {
+        var movie = _context.Movies.FirstOrDefault(movies => movies.Id == id);
+        if (movie == null)
+            return NotFound();
+        else
+        {
+            _context.Remove(movie);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }

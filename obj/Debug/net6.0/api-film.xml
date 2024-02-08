@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>api-film</name>
+    </assembly>
+    <members>
+        <member name="M:api_film.Controllers.MovieController.CreateMovie(api_film.Data.DTOs.CreateMovieDTO)">
+            <summary>
+            Add a movie to Database
+            </summary>
+            <param name="movieDTO">Object with necessary fields to create a movie</param>
+            <returns>IActionResult</returns>
+            <response code="201">Object created with successful</response>
+        </member>
+        <member name="M:api_film.Controllers.MovieController.ReadMovies(System.Int32,System.Int32)">
+            <summary>
+            Read all movies. If the user not pass a param to skip/take the default is show the first ten results
+            </summary>
+            <param name="movieDTO">Object with necessary fields to create a movie</param>
+            <returns>IActionResult</returns>
+            <response code="200">Ok</response>
+        </member>
+        <member name="M:api_film.Controllers.MovieController.ReadMovieById(System.Int32)">
+            <summary>
+            Read movies by id passed by user as param
+            </summary>
+            <param name="id">Object id</param>
+            <returns>IActionResult</returns>
+            <response code="200">Ok</response>
+        </member>
+    </members>
+</doc>
