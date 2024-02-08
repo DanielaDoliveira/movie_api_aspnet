@@ -1,18 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace api_film.Models;
+namespace api_film.Data.DTOs;
 
-public class Movie
+public class UpdateMovieDTO
 {
 
-    [Key][Required] public int Id { get; set; }
     [Required(ErrorMessage = "Title is required")]
-    [MaxLength(50, ErrorMessage = "cannot exceeds 50 characters")]
+    [StringLength(50, ErrorMessage = "cannot exceeds 50 characters")]
     public string Title { get; set; }
 
 
     [Required(ErrorMessage = "Genre is required")]
-    [MaxLength(30, ErrorMessage = "Genre cannot exceeds 30 characters")]
+    [StringLength(30, ErrorMessage = "Genre cannot exceeds 30 characters")]
     public string Genre { get; set; }
 
 

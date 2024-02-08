@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "d1K2BZSsCV2oLzR0kW92mtk1lk89t97V36fOO17FIHZqgwqfk6wum/VQjieKnh2xffzWV6i3lC6Y52qQu77IeQ==",
+  "dgSpecHash": "oOhJTMKaaxxNoCHeENFNAHjQ0eX1oBcm8+MPaYx2qI+bddhkleqfEvwtRRSGQNd3hF+eRV/kYug1BNFTYKiD0A==",
   "success": true,
   "projectFilePath": "/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/api-film.csproj",
   "expectedPackageFiles": [
+    "/Users/danielafialhodoliveira/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
+    "/Users/danielafialhodoliveira/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "/Users/danielafialhodoliveira/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/danielafialhodoliveira/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/danielafialhodoliveira/.nuget/packages/microsoft.entityframeworkcore/6.0.10/microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "/Users/danielafialhodoliveira/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.10/microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",
     "/Users/danielafialhodoliveira/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.10/microsoft.entityframeworkcore.analyzers.6.0.10.nupkg.sha512",

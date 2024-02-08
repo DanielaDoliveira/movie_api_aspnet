@@ -40,3 +40,5 @@
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/MySqlConnector.dll
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/AutoMapper.dll
+/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
