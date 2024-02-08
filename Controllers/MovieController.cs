@@ -2,6 +2,7 @@ using api_film.Data;
 using api_film.Data.DTOs;
 using api_film.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api_film.Controllers;
@@ -61,6 +62,30 @@ public class MovieController : ControllerBase
         else
         {
             _mapper.Map(movieDTO, movie);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+    }
+
+    [HttpPatch("{id}")]
+    public IActionResult UpdatePatchMovie(int id, JsonPatchDocument<UpdateMovieDTO> patch)
+    {
+        var movie = _context.Movies.FirstOrDefault(movie => movie.Id == id);
+        if (movie == null)
+        {
+            return NotFound();
+        }
+
+        var movieToUpdate = _mapper.Map<UpdateMovieDTO>(movie);
+        patch.ApplyTo(movieToUpdate, ModelState);
+        if (!TryValidateModel(movieToUpdate))
+        {
+            return ValidationProblem(ModelState);
+        }
+        else
+        {
+            _mapper.Map(movieToUpdate, movie);
             _context.SaveChanges();
             return NoContent();
         }

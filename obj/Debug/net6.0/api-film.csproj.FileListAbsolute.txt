@@ -42,3 +42,7 @@
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/AutoMapper.dll
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
