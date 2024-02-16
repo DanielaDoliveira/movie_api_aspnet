@@ -11,4 +11,5 @@ public class ReadMovieDTO
 
     public int Duration { get; set; }
     public DateTime searchTime { get; set; } = DateTime.Now;
+    public ICollection<ReadMovieSessionDTO> MovieSessions { get; set; }
 }

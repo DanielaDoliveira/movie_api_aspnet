@@ -48,7 +48,7 @@ public class MovieController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     public IEnumerable<ReadMovieDTO> ReadMovies([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
-        return _mapper.Map<List<ReadMovieDTO>>(_context.Movies.Skip(skip).Take(take));
+        return _mapper.Map<List<ReadMovieDTO>>(_context.Movies.Skip(skip).Take(take).ToList());
     }
 
     /// <summary>
@@ -127,4 +127,8 @@ public class MovieController : ControllerBase
             return NoContent();
         }
     }
+
+
+
+
 }

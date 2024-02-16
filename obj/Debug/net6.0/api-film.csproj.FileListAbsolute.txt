@@ -48,3 +48,5 @@
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/api-film.xml
 /Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/obj/Debug/net6.0/api-film.xml
+/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Castle.Core.dll
+/Users/danielafialhodoliveira/Documents/dotNET/apialura/api-film/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Proxies.dll

@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.EntityFrameworkCore;
 using api_film.Models;
 namespace api_film.Data
@@ -12,6 +9,9 @@ namespace api_film.Data
         {
         }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<MovieTheater> MovieTheaters { get; set; }
 
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<MovieSession> MovieSessions { get; set; }
     }
 }
