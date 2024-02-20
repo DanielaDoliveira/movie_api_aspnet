@@ -12,7 +12,7 @@
             <returns>IActionResult</returns>
             <response code="201">Object created with successful</response>
         </member>
-        <member name="M:api_film.Controllers.MovieController.ReadMovies(System.Int32,System.Int32)">
+        <member name="M:api_film.Controllers.MovieController.ReadMovies(System.Int32,System.Int32,System.String)">
             <summary>
             Read all movies. If the user not pass a param to skip/take the default is show the first ten results
             </summary>

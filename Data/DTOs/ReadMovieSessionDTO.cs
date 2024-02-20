@@ -7,6 +7,7 @@ namespace api_film.Data.DTOs
 {
     public class ReadMovieSessionDTO
     {
-        public int Id { get; set; }
+        public int MovieId { get; set; }
+        public int MovieTheaterId { get; set; }
     }
 }

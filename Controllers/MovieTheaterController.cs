@@ -4,6 +4,7 @@ using api_film.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 namespace api_film.Controllers;
 
 [ApiController]
@@ -30,9 +31,18 @@ public class MovieTheaterController : ControllerBase
 
     }
     [HttpGet]
-    public IEnumerable<ReadMovieTheaterDTO> ReadMovieTheater()
+    public IEnumerable<ReadMovieTheaterDTO> ReadMovieTheater([FromQuery] int? addressid = null)
     {
-        return _mapper.Map<List<ReadMovieTheaterDTO>>(_context.MovieTheaters.ToList());
+        if (addressid == null)
+        {
+            return _mapper.Map<List<ReadMovieTheaterDTO>>(_context.MovieTheaters.ToList());
+        }
+
+        return _mapper.Map<List<ReadMovieTheaterDTO>>(_context.MovieTheaters
+        .FromSqlRaw($"SELECT Id, Name,AddressId FROM MovieTheaters WHERE MovieTheaters.AddressId = {addressid}")
+        .ToList());
+
+
     }
     [HttpGet("{id}")]
     public IActionResult ReadMovieTheaterById(int id)

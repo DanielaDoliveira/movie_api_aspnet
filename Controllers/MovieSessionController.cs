@@ -28,7 +28,12 @@ public class MovieSessionController : ControllerBase
         MovieSession movieSession = _mapper.Map<MovieSession>(dto);
         _context.MovieSessions.Add(movieSession);
         _context.SaveChanges();
-        return CreatedAtAction(nameof(RecoverMovieSessionByID), new { Id = movieSession.Id }, movieSession);
+        return CreatedAtAction(nameof(RecoverMovieSessionByID),
+        new
+        {
+            MovieId = movieSession.MovieId,
+            movieTheaterId = movieSession.MovieTheaterId
+        }, movieSession);
     }
     [HttpGet]
     public IEnumerable<ReadMovieSessionDTO> RecoverMovieSession()
@@ -36,10 +41,11 @@ public class MovieSessionController : ControllerBase
         return _mapper.Map<List<ReadMovieSessionDTO>>(_context.MovieSessions.ToList());
     }
 
-    [HttpGet("{id}")]
-    public IActionResult RecoverMovieSessionByID(int id)
+    [HttpGet("{movieId}/{movieTheaterId}")]
+    public IActionResult RecoverMovieSessionByID(int movieId, int movieTheaterId)
     {
-        MovieSession movieSession = _context.MovieSessions.FirstOrDefault(movieSession => movieSession.Id == id);
+        MovieSession movieSession = _context.MovieSessions.FirstOrDefault(movieSession => movieSession.MovieId == movieId &&
+        movieSession.MovieTheaterId == movieTheaterId);
         if (movieSession != null)
         {
             ReadMovieSessionDTO movieSessionDTO = _mapper.Map<ReadMovieSessionDTO>(movieSession);
